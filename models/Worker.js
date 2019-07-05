@@ -23,20 +23,17 @@ const workerSchema = new Schema({
         type: Number,
         required: true
     },
-    Borrowed: [{
-        message: {
-            type: String,
-        },
-        date: {
+    meta: {
+        dateCreated: {
             type: Date,
             default: Date.now
         },
-        ammount: {
-            type: Number,
-            required: true
+        dateModified: {
+            type: Date,
+            default: Date.now
         }
-    }],
-    attendence: [Number]
+    }
 });
+
 
 module.exports = mongoose.model('worker', workerSchema);
